@@ -75,3 +75,19 @@ function settingCartValue(){
 
     document.querySelector(".cart-quantity").innerHTML=`${cartQuantity}`;
 }
+
+const logoContainer = document.getElementById('id1')
+
+function displayResize(){
+if(window.innerWidth <=575){
+    logoContainer.innerHTML =`<img style ="width :40px;" src="images/amazon-mobile-logo-white.png" alt="">`;
+}
+else{
+    logoContainer.innerHTML =`<img class="amazon-logo" src="images/amazon-logo-white.png" alt="" />`;
+}
+}
+
+displayResize();
+
+
+window.addEventListener("resize", displayResize);

@@ -26,10 +26,9 @@
     border-width: 1px;
     border-color: rgb(19, 25, 33);
     
-    width: 100px;
+    display:inline-block;
     
-    padding: 5px; 
-    
+    padding: 6px; 
     cursor: pointer;  
     transition: border-color .25s; 
 }
@@ -39,8 +38,8 @@
     border-width: 1px;   
 }
 .amazon-logo{
-    margin-top: 7px;
-    width: 100%;
+    margin-top: 5px;
+    width: 100px;
 }
 .middle-section{
     flex: 1;
@@ -55,11 +54,12 @@
     border: none;
     position: relative;
     margin-left: 15px;
+    margin-right: 6px;
 }
 
 .search-bar{
         flex :1;
-        
+        min-width: 253px;
         height: 38px;
         margin-top: 10px ;
         margin-bottom: 10px;
@@ -119,13 +119,11 @@
 
 .returns-buttton-container{
     flex: 1;
-    width: 100%;
+    display: inline-block;
+    
 }
 .returns-button{
-    font-family:  Roboto, Arial;
-    font-weight: 400;
-    font-size: 13px;
-    text-align: left;
+    
 
     background-color: rgb(19, 25, 33) ;
     color: white;
@@ -134,10 +132,9 @@
     border-color:  rgb(19, 25, 33);
     
     
-    margin-top: 4px ;
-    margin-bottom: 4px;
+    margin: 4px;
     padding-top: 6px;
-    padding-bottom: 7px;
+    padding-bottom: 6px;
     transition: border-color .25s;
 
     cursor: pointer;
@@ -148,19 +145,26 @@
     border-color: white;
     
 }
-
+.returns-span-text{
+    font-family:  Roboto, Arial;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
 
 .orders-span-text{
     padding-right: 2px;
-    
+    white-space: nowrap;
     font-family:  Roboto, Arial;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .cart-button-container{
-    width: 100%;
-    flex: 1;
+    display: inline-block;
+    
 
 }
 
@@ -174,8 +178,7 @@
     border-color:  rgb(19, 25, 33);
     border-width: 1px;
     
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin :4px;
     
     
     transition: border-color .25s;

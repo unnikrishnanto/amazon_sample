@@ -1,3 +1,5 @@
+import { product } from "../data/product.js";
+
 let cartQuantity = JSON.parse(localStorage.getItem('Quantity')) || 0;
 
 settingCartValue();
@@ -60,7 +62,7 @@ function displayAdded(button){
     
    setTimeout(() => {
     addToCartContainer.classList.remove("displaying-added-to-cart");  
-   }, 1000);
+   }, 1500);
    
    addToCartContainer.classList.add("displaying-added-to-cart");
 }
@@ -76,7 +78,7 @@ function settingCartValue(){
     document.querySelector(".cart-quantity").innerHTML=`${cartQuantity}`;
 }
 
-const logoContainer = document.getElementById('id1')
+const logoContainer = document.getElementById('id1');
 
 function displayResize(){
 if(window.innerWidth <=575){

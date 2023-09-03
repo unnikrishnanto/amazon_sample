@@ -209,3 +209,24 @@
   margin-top: 11px;
   margin-bottom: 15px;
 }
+
+.view-products-button{
+    flex: 1;
+    background-color:  rgb(247, 202, 0);
+    border-color:  rgb(247, 202, 0);
+    border-radius: 50px;
+    border-style: solid ;
+    border-width: 1px;
+    padding: 13px;
+    cursor: pointer;
+    transition: border-color .25s,background-color .25s;
+    margin-top: 10px;
+}
+
+.view-products-button:hover{
+  background-color: rgb(255, 216, 20);
+  border-color: rgb(255, 216, 20);
+}
+.checkout-num-js{
+  padding-top: 3px;
+}

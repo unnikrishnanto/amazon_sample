@@ -1,6 +1,7 @@
 import { product } from "../data/product.js";
+import { addingToCart,clearcart,numberOfItems } from "../data/cart.js";
 
-let cartQuantity = JSON.parse(localStorage.getItem('Quantity')) || 0;
+let cartQuantity = numberOfItems ;
 
 settingCartValue();
 
@@ -39,7 +40,8 @@ product.forEach((value) =>{
       <img class ="check-image" src="images/icons/checkmark.png" alt="">  
       <p class ="text"> Added </p> 
       </div>
-    <button class="add-to-cart-button add-to-cart-button-js"> Add to cart</button>
+    <button class="add-to-cart-button add-to-cart-button-js"
+    data-product-Id ="${value.id}"> Add to cart</button>
     </div>
     `;
     productGridElement.innerHTML =gridcode;
@@ -49,13 +51,15 @@ const addButton = document.querySelectorAll(".add-to-cart-button-js")
 addButton.forEach((button) =>{
     button.addEventListener('click', () =>{
         displayAdded(button);
+        const productId = button.dataset.productId;
+        console.log(productId);
+        addingToCart(productId);
 })
 })
 
 function displayAdded(button){
     
     cartQuantity++ ;
-    localStorage.setItem('Quantity',JSON.stringify(cartQuantity));
     settingCartValue();
 
     let addToCartContainer = button.closest('.product').querySelector('.added-to-cart-container');
@@ -93,3 +97,12 @@ displayResize();
 
 
 window.addEventListener("resize", displayResize);
+
+
+document.querySelector(".returns-button-container").addEventListener("click",() =>{
+   clearcart();  
+   cartQuantity=0;
+   localStorage.setItem('Quantity',JSON.stringify(cartQuantity))
+
+});
+

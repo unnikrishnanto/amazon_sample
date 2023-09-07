@@ -1,46 +1,13 @@
-import { cart,calcNoOfItems,removeProduct } from "../data/cart.js";
+import { cart,calcNoOfItems,removeProduct,calcSum } from "../data/cart.js";
 import { product } from "../data/product.js";
 
 let checkoutNumberEle = document.querySelector(".checkout-num-js");
 let gridContent =``;
 const orderSummaryElement = document.querySelector(".order-summary-js");
+const paymentElement =document.querySelector(".payment-summary");
 pageload();
 
-const paymentElement =document.querySelector(".payment-summary");
-paymentElement.innerHTML=`
-<div class="payment-summary-title">
-            Order Summary
-          </div>
 
-          <div class="payment-summary-row">
-            <div>Items (${calcNoOfItems()}):</div>
-            <div class="payment-summary-money">$555</div>
-          </div>
-
-          <div class="payment-summary-row">
-            <div>Shipping &amp; handling:</div>
-            <div class="payment-summary-money">$4.99</div>
-          </div>
-
-          <div class="payment-summary-row subtotal-row">
-            <div>Total before tax:</div>
-            <div class="payment-summary-money">$47.74</div>
-          </div>
-
-          <div class="payment-summary-row">
-            <div>Estimated tax (10%):</div>
-            <div class="payment-summary-money">$4.77</div>
-          </div>
-
-          <div class="payment-summary-row total-row">
-            <div>Order total:</div>
-            <div class="payment-summary-money">$52.51</div>
-          </div>
-
-          <button class="place-order-button button-primary">
-            Place your order
-          </button>
-`;
 
 function pageload(){
   
@@ -142,6 +109,41 @@ function pageload(){
 
         }
         deleteFunction();
+
+        paymentElement.innerHTML=`
+        <div class="payment-summary-title">
+        Order Summary
+        </div>
+
+        <div class="payment-summary-row">
+        <div>Items (${calcNoOfItems()}):</div>
+        <div class="payment-summary-money">$${calcSum()}</div>
+        </div>
+
+        <div class="payment-summary-row">
+        <div>Shipping &amp; handling:</div>
+        <div class="payment-summary-money">$4.99</div>
+        </div>
+
+        <div class="payment-summary-row subtotal-row">
+        <div>Total before tax:</div>
+        <div class="payment-summary-money">$47.74</div>
+        </div>
+
+        <div class="payment-summary-row">
+        <div>Estimated tax (10%):</div>
+        <div class="payment-summary-money">$4.77</div>
+        </div>
+
+        <div class="payment-summary-row total-row">
+        <div>Order total:</div>
+        <div class="payment-summary-money">$52.51</div>
+        </div>
+
+        <button class="place-order-button button-primary">
+        Place your order
+        </button>
+        `;
 
 }
 

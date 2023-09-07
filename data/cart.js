@@ -1,4 +1,4 @@
-
+import { product } from "./product.js";
 
 export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -53,4 +53,19 @@ export function removeProduct(Id){
        }
        index++;
     });
+}
+
+let cartsum ;
+let price;
+export function calcSum(){
+    cartsum= 0;
+    cart.forEach(element =>{
+        product.forEach((product) =>{
+            if(element.productId === product.id){
+                price = element.quantity * product.priceCents
+                cartsum += price ; 
+            }
+        })
+    })
+    return (cartsum/100).toFixed(2);
 }

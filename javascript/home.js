@@ -1,7 +1,7 @@
 import { product } from "../data/product.js";
-import { addingToCart,clearcart,numberOfItems } from "../data/cart.js";
+import { addingToCart,clearcart,calcNoOfItems } from "../data/cart.js";
 
-let cartQuantity = numberOfItems ;
+let cartQuantity = calcNoOfItems() ;
 
 settingCartValue();
 
@@ -52,7 +52,6 @@ addButton.forEach((button) =>{
     button.addEventListener('click', () =>{
         displayAdded(button);
         const productId = button.dataset.productId;
-        console.log(productId);
         addingToCart(productId);
 })
 })
@@ -97,12 +96,4 @@ displayResize();
 
 
 window.addEventListener("resize", displayResize);
-
-
-document.querySelector(".returns-button-container").addEventListener("click",() =>{
-   clearcart();  
-   cartQuantity=0;
-   localStorage.setItem('Quantity',JSON.stringify(cartQuantity))
-
-});
 
